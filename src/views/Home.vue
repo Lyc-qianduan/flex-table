@@ -1,18 +1,28 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<!--
+ * @Author: your name
+ * @Date: 2020-10-20 17:06:27
+ * @LastEditTime: 2020-10-20 17:10:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /flex-table/src/views/Home.vue
+-->
+<style scoped lang="sass">
+.app_container
+
+</style>
+
+<template lang="pug">
+.app_container 222
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+@Component
+class Hello extends Vue {
 }
+
+export default Hello
 </script>
