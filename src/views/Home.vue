@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 17:06:27
- * @LastEditTime: 2020-10-20 17:38:27
+ * @LastEditTime: 2020-10-21 09:26:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /flex-table/src/views/Home.vue
@@ -25,15 +25,32 @@
         EachCommodity(
           v-for="item in commodityList"
           :key="item.id"
-          :name="item.name"
-          :value="item.value"
+          :name.sync="item.name"
+          :value.sync="item.value"
         )
       .commodity_settings
   .detail
     .title 规格明细:
     .content
-      .detail_list list
-
+      .detail_list
+    el-table(
+      :data="tableData"
+      style="width: 100%"
+    )
+      el-table-column(
+        prop="date"
+        label="日期"
+        width="180"
+      )
+      el-table-column(
+        prop="name"
+        label="姓名"
+        width="180"
+      )
+      el-table-column(
+        prop="address"
+        label="地址"
+      )
 </template>
 
 <script>
@@ -46,7 +63,26 @@ import EachCommodity from '../components/EachCommodity'
     EachCommodity
   }
 })
+
 class Hello extends Vue {
+  tableData = [{
+    date: '2016-05-02',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1518 弄'
+  }, {
+    date: '2016-05-04',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1517 弄'
+  }, {
+    date: '2016-05-01',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1519 弄'
+  }, {
+    date: '2016-05-03',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1516 弄'
+  }]
+
   commodityList = [
     {
       name: 'color',
