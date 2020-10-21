@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-20 17:06:27
- * @LastEditTime: 2020-10-21 09:26:30
+ * @LastEditTime: 2020-10-21 10:30:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /flex-table/src/views/Home.vue
@@ -38,18 +38,11 @@
       style="width: 100%"
     )
       el-table-column(
-        prop="date"
-        label="日期"
+        v-for="item in columnsList"
+        :key="item.id"
+        :label="item.prop"
+        :prop="item.prop"
         width="180"
-      )
-      el-table-column(
-        prop="name"
-        label="姓名"
-        width="180"
-      )
-      el-table-column(
-        prop="address"
-        label="地址"
       )
 </template>
 
@@ -65,23 +58,50 @@ import EachCommodity from '../components/EachCommodity'
 })
 
 class Hello extends Vue {
-  tableData = [{
-    date: '2016-05-02',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1518 弄'
-  }, {
-    date: '2016-05-04',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1517 弄'
-  }, {
-    date: '2016-05-01',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1519 弄'
-  }, {
-    date: '2016-05-03',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1516 弄'
-  }]
+  columnsList = [
+    {
+      prop: 'color'
+    },
+    {
+      prop: 'size'
+    },
+    {
+      prop: 'price'
+    },
+    {
+      prop: 'stock'
+    },
+    {
+      prop: 'weight'
+    },
+    {
+      prop: 'code'
+    },
+    {
+      prop: 'rawCost'
+    }
+  ]
+
+  tableData = [
+    {
+      color: 'red',
+      size: 'middle',
+      price: 998,
+      stock: 9,
+      weight: 9,
+      code: 990,
+      rawCost: 9
+    },
+    {
+      color: 'red',
+      size: 'middle',
+      price: 998,
+      stock: 9,
+      weight: 9,
+      code: 990,
+      rawCost: 9
+    }
+  ]
 
   commodityList = [
     {
